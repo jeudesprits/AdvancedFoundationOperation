@@ -23,30 +23,31 @@ protocol OperationQueueDelegate {
 
   @objc
   optional func operationQueue(
-    operationQueue: OperationQueue,
+    _ operationQueue: OperationQueue,
     willAddOperation operation: Foundation.Operation
   )
 
   @objc
   optional func operationQueue(
-    operationQueue: OperationQueue,
+    _ operationQueue: OperationQueue,
     operationDidFinish operation: Foundation.Operation,
-    withErrors errors: [NSError] // TODO: - NSError -> Swift.Error ?
+    withErrors errors: [NSError]
   )
 }
 
 /**
- `OperationQueue` is an `NSOperationQueue` subclass that implements a large
+ `OperationQueue` is an `Foundation.OperationQueue` subclass that implements a large
  number of "extra features" related to the `Operation` class:
 
  - Notifying a delegate of all operation completion
  - Extracting generated dependencies from operation conditions
  - Setting up dependencies to enforce mutual exclusivity
  */
-class OperationQueue: NSOperationQueue {
+class OperationQueue: Foundation.OperationQueue {
+
   weak var delegate: OperationQueueDelegate?
 
-  override func addOperation(operation: NSOperation) {
+  override func addOperation(_ operation: Foundation.Operation) {
     if let op = operation as? Operation {
       // Set up a `BlockObserver` to invoke the `OperationQueueDelegate` method.
       let delegate = BlockObserver(
@@ -63,7 +64,7 @@ class OperationQueue: NSOperationQueue {
       op.addObserver(delegate)
 
       // Extract any dependencies needed by this operation.
-      let dependencies = op.conditions.flatMap {
+      let dependencies = op.conditions.compactMap {
         $0.dependencyForOperation(op)
       }
 
@@ -77,10 +78,10 @@ class OperationQueue: NSOperationQueue {
        With condition dependencies added, we can now see if this needs
        dependencies to enforce mutual exclusivity.
        */
-      let concurrencyCategories: [String] = op.conditions.flatMap { condition in
-        if !condition.dynamicType.isMutuallyExclusive { return nil }
+      let concurrencyCategories: [String] = op.conditions.compactMap { condition in
+        if !type(of: condition).isMutuallyExclusive { return nil }
 
-        return "\(condition.dynamicType)"
+        return "\(type(of: condition))"
       }
 
       if !concurrencyCategories.isEmpty {
@@ -108,7 +109,7 @@ class OperationQueue: NSOperationQueue {
        would lead to the operation strongly referencing itself and that's
        the pure definition of a memory leak.
        */
-      operation.addCompletionBlock { [weak self, weak operation] in
+      operation.completionBlock = { [weak self, weak operation] in
         guard let queue = self, let operation = operation else { return }
         queue.delegate?.operationQueue?(queue, operationDidFinish: operation, withErrors: [])
       }
@@ -118,7 +119,8 @@ class OperationQueue: NSOperationQueue {
     super.addOperation(operation)
   }
 
-  override func addOperations(operations: [NSOperation], waitUntilFinished wait: Bool) {
+
+  override func addOperations(_ ops: [Foundation.Operation], waitUntilFinished wait: Bool) {
     /*
      The base implementation of this method does not call `addOperation()`,
      so we'll call it ourselves.

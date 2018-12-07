@@ -16,9 +16,6 @@
 		555B6F7721BABE8000953820 /* OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B6F7521BABE8000953820 /* OperationQueue.swift */; };
 		555B6F8221BABEB500953820 /* SilentCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B6F7921BABEB500953820 /* SilentCondition.swift */; };
 		555B6F8321BABEB500953820 /* OperationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B6F7A21BABEB500953820 /* OperationErrors.swift */; };
-		555B6F8421BABEB500953820 /* UserNotificationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B6F7B21BABEB500953820 /* UserNotificationCondition.swift */; };
-		555B6F8521BABEB500953820 /* RemoteNotificationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B6F7C21BABEB500953820 /* RemoteNotificationCondition.swift */; };
-		555B6F8621BABEB500953820 /* ReachabilityCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B6F7D21BABEB500953820 /* ReachabilityCondition.swift */; };
 		555B6F8721BABEB500953820 /* NoCancelledDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B6F7E21BABEB500953820 /* NoCancelledDependencies.swift */; };
 		555B6F8821BABEB500953820 /* OperationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B6F7F21BABEB500953820 /* OperationCondition.swift */; };
 		555B6F8921BABEB500953820 /* NegatedCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B6F8021BABEB500953820 /* NegatedCondition.swift */; };
@@ -26,6 +23,7 @@
 		555B6F8F21BABF1500953820 /* NSOperation+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B6F8C21BABF1500953820 /* NSOperation+Operations.swift */; };
 		555B6F9021BABF1500953820 /* NSLock+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B6F8D21BABF1500953820 /* NSLock+Operations.swift */; };
 		555B6F9121BABF1500953820 /* Dictionary+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B6F8E21BABF1500953820 /* Dictionary+Operations.swift */; };
+		559260C221BB1D17002DF2B7 /* DispatchQueue+QualityOfService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559260C121BB1D17002DF2B7 /* DispatchQueue+QualityOfService.swift */; };
 		55F50CCE21BABF8B0017DCF3 /* TimeoutObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F50CCB21BABF8B0017DCF3 /* TimeoutObserver.swift */; };
 		55F50CCF21BABF8B0017DCF3 /* BlockObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F50CCC21BABF8B0017DCF3 /* BlockObserver.swift */; };
 		55F50CD021BABF8B0017DCF3 /* OperationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F50CCD21BABF8B0017DCF3 /* OperationObserver.swift */; };
@@ -48,9 +46,6 @@
 		555B6F7521BABE8000953820 /* OperationQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueue.swift; sourceTree = "<group>"; };
 		555B6F7921BABEB500953820 /* SilentCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SilentCondition.swift; sourceTree = "<group>"; };
 		555B6F7A21BABEB500953820 /* OperationErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationErrors.swift; sourceTree = "<group>"; };
-		555B6F7B21BABEB500953820 /* UserNotificationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotificationCondition.swift; sourceTree = "<group>"; };
-		555B6F7C21BABEB500953820 /* RemoteNotificationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteNotificationCondition.swift; sourceTree = "<group>"; };
-		555B6F7D21BABEB500953820 /* ReachabilityCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityCondition.swift; sourceTree = "<group>"; };
 		555B6F7E21BABEB500953820 /* NoCancelledDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoCancelledDependencies.swift; sourceTree = "<group>"; };
 		555B6F7F21BABEB500953820 /* OperationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationCondition.swift; sourceTree = "<group>"; };
 		555B6F8021BABEB500953820 /* NegatedCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NegatedCondition.swift; sourceTree = "<group>"; };
@@ -58,6 +53,7 @@
 		555B6F8C21BABF1500953820 /* NSOperation+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSOperation+Operations.swift"; sourceTree = "<group>"; };
 		555B6F8D21BABF1500953820 /* NSLock+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLock+Operations.swift"; sourceTree = "<group>"; };
 		555B6F8E21BABF1500953820 /* Dictionary+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Operations.swift"; sourceTree = "<group>"; };
+		559260C121BB1D17002DF2B7 /* DispatchQueue+QualityOfService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+QualityOfService.swift"; sourceTree = "<group>"; };
 		55F50CCB21BABF8B0017DCF3 /* TimeoutObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeoutObserver.swift; sourceTree = "<group>"; };
 		55F50CCC21BABF8B0017DCF3 /* BlockObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockObserver.swift; sourceTree = "<group>"; };
 		55F50CCD21BABF8B0017DCF3 /* OperationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationObserver.swift; sourceTree = "<group>"; };
@@ -100,10 +96,10 @@
 			children = (
 				550EF8E421BABDA7003A9488 /* AppDelegate.swift */,
 				550EF8E621BABDA7003A9488 /* ViewController.swift */,
+				555B6F8B21BABED800953820 /* Conditions */,
+				55F50CD121BABF940017DCF3 /* Observers */,
 				55F50CDC21BABFBD0017DCF3 /* Operation */,
 				555B6F7821BABE8900953820 /* OperationQueue */,
-				55F50CD121BABF940017DCF3 /* Observers */,
-				555B6F8B21BABED800953820 /* Conditions */,
 				555B6F9221BABF2300953820 /* Convenience Extensions */,
 				550EF8F821BABDF8003A9488 /* Resources */,
 			);
@@ -133,15 +129,12 @@
 		555B6F8B21BABED800953820 /* Conditions */ = {
 			isa = PBXGroup;
 			children = (
+				555B6F7A21BABEB500953820 /* OperationErrors.swift */,
+				555B6F7F21BABEB500953820 /* OperationCondition.swift */,
 				555B6F8121BABEB500953820 /* MutuallyExclusive.swift */,
 				555B6F8021BABEB500953820 /* NegatedCondition.swift */,
 				555B6F7E21BABEB500953820 /* NoCancelledDependencies.swift */,
-				555B6F7F21BABEB500953820 /* OperationCondition.swift */,
-				555B6F7A21BABEB500953820 /* OperationErrors.swift */,
-				555B6F7D21BABEB500953820 /* ReachabilityCondition.swift */,
-				555B6F7C21BABEB500953820 /* RemoteNotificationCondition.swift */,
 				555B6F7921BABEB500953820 /* SilentCondition.swift */,
-				555B6F7B21BABEB500953820 /* UserNotificationCondition.swift */,
 			);
 			path = Conditions;
 			sourceTree = "<group>";
@@ -152,6 +145,7 @@
 				555B6F8E21BABF1500953820 /* Dictionary+Operations.swift */,
 				555B6F8D21BABF1500953820 /* NSLock+Operations.swift */,
 				555B6F8C21BABF1500953820 /* NSOperation+Operations.swift */,
+				559260C121BB1D17002DF2B7 /* DispatchQueue+QualityOfService.swift */,
 			);
 			path = "Convenience Extensions";
 			sourceTree = "<group>";
@@ -159,8 +153,8 @@
 		55F50CD121BABF940017DCF3 /* Observers */ = {
 			isa = PBXGroup;
 			children = (
-				55F50CCC21BABF8B0017DCF3 /* BlockObserver.swift */,
 				55F50CCD21BABF8B0017DCF3 /* OperationObserver.swift */,
+				55F50CCC21BABF8B0017DCF3 /* BlockObserver.swift */,
 				55F50CCB21BABF8B0017DCF3 /* TimeoutObserver.swift */,
 			);
 			path = Observers;
@@ -169,10 +163,10 @@
 		55F50CDC21BABFBD0017DCF3 /* Operation */ = {
 			isa = PBXGroup;
 			children = (
+				55F50CD621BABFB50017DCF3 /* Operation.swift */,
 				55F50CD421BABFB50017DCF3 /* BlockOperation.swift */,
 				55F50CD521BABFB50017DCF3 /* DelayOperation.swift */,
 				55F50CD221BABFB50017DCF3 /* GroupOperation.swift */,
-				55F50CD621BABFB50017DCF3 /* Operation.swift */,
 				55F50CD321BABFB50017DCF3 /* URLSessionTaskOperation.swift */,
 			);
 			path = Operation;
@@ -251,6 +245,7 @@
 			files = (
 				555B6F9021BABF1500953820 /* NSLock+Operations.swift in Sources */,
 				555B6F8921BABEB500953820 /* NegatedCondition.swift in Sources */,
+				559260C221BB1D17002DF2B7 /* DispatchQueue+QualityOfService.swift in Sources */,
 				555B6F8A21BABEB500953820 /* MutuallyExclusive.swift in Sources */,
 				550EF8E721BABDA7003A9488 /* ViewController.swift in Sources */,
 				555B6F8721BABEB500953820 /* NoCancelledDependencies.swift in Sources */,
@@ -258,7 +253,6 @@
 				55F50CCF21BABF8B0017DCF3 /* BlockObserver.swift in Sources */,
 				555B6F8821BABEB500953820 /* OperationCondition.swift in Sources */,
 				555B6F8221BABEB500953820 /* SilentCondition.swift in Sources */,
-				555B6F8521BABEB500953820 /* RemoteNotificationCondition.swift in Sources */,
 				55F50CD721BABFB50017DCF3 /* GroupOperation.swift in Sources */,
 				55F50CDB21BABFB50017DCF3 /* Operation.swift in Sources */,
 				555B6F7721BABE8000953820 /* OperationQueue.swift in Sources */,
@@ -270,8 +264,6 @@
 				55F50CD021BABF8B0017DCF3 /* OperationObserver.swift in Sources */,
 				55F50CDA21BABFB50017DCF3 /* DelayOperation.swift in Sources */,
 				555B6F8321BABEB500953820 /* OperationErrors.swift in Sources */,
-				555B6F8421BABEB500953820 /* UserNotificationCondition.swift in Sources */,
-				555B6F8621BABEB500953820 /* ReachabilityCondition.swift in Sources */,
 				550EF8E521BABDA7003A9488 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

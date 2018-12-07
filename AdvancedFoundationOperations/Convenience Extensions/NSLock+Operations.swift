@@ -9,9 +9,10 @@
 import Foundation
 
 extension NSLock {
-    func withCriticalScope<T>(@noescape block: Void -> T) -> T {
+
+    func withCriticalSection<T>(section: () -> T) -> T {
         lock()
-        let value = block()
+        let value = section()
         unlock()
         return value
     }
