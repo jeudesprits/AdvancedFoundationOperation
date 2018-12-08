@@ -255,7 +255,7 @@ class Operation: Foundation.Operation {
 
   private var _internalErrors = [NSError]()
 
-  func cancelWithError(error: NSError? = nil) {
+  func cancelWithError(_ error: NSError? = nil) {
     if let error = error {
       _internalErrors.append(error)
     }

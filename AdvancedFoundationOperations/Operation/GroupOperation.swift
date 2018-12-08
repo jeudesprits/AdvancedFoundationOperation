@@ -57,7 +57,7 @@ class GroupOperation: Operation {
     internalQueue.addOperation(finishingOperation)
   }
 
-  func addOperation(operation: Foundation.Operation) {
+  func addOperation(_ operation: Foundation.Operation) {
     internalQueue.addOperation(operation)
   }
 
@@ -70,15 +70,21 @@ class GroupOperation: Operation {
     aggregatedErrors.append(error)
   }
 
-  func operationDidFinish(operation: Foundation.Operation, withErrors errors: [NSError]) {
+  func operationDidFinish(_ operation: Foundation.Operation, withErrors errors: [NSError]) {
     // For use by subclassers.
   }
 }
 
 extension GroupOperation: OperationQueueDelegate {
   
-  final func operationQueue(operationQueue: OperationQueue, willAddOperation operation: Foundation.Operation) {
-    assert(!finishingOperation.finished && !finishingOperation.executing, "cannot add new operations to a group after the group has completed")
+  final func operationQueue(
+  _ operationQueue: OperationQueue,
+    willAddOperation operation: Foundation.Operation
+  ) {
+    assert(
+      !finishingOperation.isFinished && !finishingOperation.isExecuting,
+      "cannot add new operations to a group after the group has completed"
+    )
 
     /*
      Some operation in this group has produced a new operation to execute.
@@ -101,12 +107,15 @@ extension GroupOperation: OperationQueueDelegate {
     }
   }
 
-  final func operationQueue(operationQueue: OperationQueue, operationDidFinish operation: NSOperation, withErrors errors: [NSError]) {
-    aggregatedErrors.extend(errors)
-
+  final func operationQueue(
+  _ operationQueue: OperationQueue,
+    operationDidFinish operation: Foundation.Operation,
+    withErrors errors: [NSError]
+  ) {
+    aggregatedErrors.append(contentsOf: errors)
     if operation === finishingOperation {
-      internalQueue.suspended = true
-      finish(aggregatedErrors)
+      internalQueue.isSuspended = true
+      finish(errors: aggregatedErrors)
     }
     else if operation !== startingOperation {
       operationDidFinish(operation, withErrors: errors)
